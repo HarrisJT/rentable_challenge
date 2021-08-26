@@ -1,9 +1,9 @@
-class DewDropInn
-  def process_end_of_day(items)
-    items.each { |item| process_item_end_of_day item }
+class GildedRose
+  def process_items(items)
+    items.each { |item| update_quality(item) }
   end
 
-  def process_item_end_of_day(item)
+  def update_quality(item)
     if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
       if item.quality > 0
         if item.name != "Sulfuras, Hand of Ragnaros"
@@ -14,12 +14,12 @@ class DewDropInn
       if item.quality < 50
         item.quality = item.quality + 1
         if item.name == "Backstage passes to a TAFKAL80ETC concert"
-          if item.days_remaining < 11
+          if item.sell_in < 11
             if item.quality < 50
               item.quality = item.quality + 1
             end
           end
-          if item.days_remaining < 6
+          if item.sell_in < 6
             if item.quality < 50
               item.quality = item.quality + 1
             end
@@ -28,9 +28,9 @@ class DewDropInn
       end
     end
     if item.name != "Sulfuras, Hand of Ragnaros"
-      item.days_remaining = item.days_remaining - 1
+      item.sell_in = item.sell_in - 1
     end
-    if item.days_remaining < 0
+    if item.sell_in < 0
       if item.name != "Aged Brie"
         if item.name != "Backstage passes to a TAFKAL80ETC concert"
           if item.quality > 0

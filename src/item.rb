@@ -1,9 +1,13 @@
 class Item
-  attr_accessor :name, :days_remaining, :quality
+  attr_accessor :name, :sell_in, :quality
 
-  def initialize(name:, days_remaining:, quality:)
+  def initialize(name:, sell_in:, quality:)
     @name = name
-    @days_remaining = days_remaining
+    @sell_in = sell_in
     @quality = quality
+  end
+
+  def to_s
+    "#{@name}, #{@sell_in}, #{@quality}"
   end
 end
