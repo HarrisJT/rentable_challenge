@@ -33,3 +33,9 @@ Feel free to make any changes to the UpdateQuality method and add any new code a
 still works correctly.
 
 ## The tests work and are fully comprehensive. Use them!
+
+## To run
+
+1. `gem install bundler`
+2. `bundle install`
+3. `bundle exec rspec test/gilded_rose_spec.rb` 
