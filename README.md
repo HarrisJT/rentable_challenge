@@ -32,10 +32,10 @@ legendary item and as such its quality is 80 and it never alters.
 Feel free to make any changes to the UpdateQuality method and add any new code as long as everything
 still works correctly.
 
-## The tests work and are fully comprehensive. Use them!
-
 ## To run
 
 1. `gem install bundler`
 2. `bundle install`
-3. `bundle exec rspec test/gilded_rose_spec.rb` 
+
+### The tests work and are fully comprehensive. Use them!
+- `bundle exec rspec test/gilded_rose_spec.rb` 
